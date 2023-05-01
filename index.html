@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Practical</title>
+</head>
+
+<body>
+    <div class="color-container">
+        <div class="left">
+            <label>All Colors</label>
+            <ul id="allColors" class="color-list">
+                <li class="color">color 2</li>
+                <li class="color">color 3</li>
+                <li class="color">color 5</li>
+            </ul>
+        </div>
+        <div class="right">
+            <label>Second colors</label>
+            <ul id="userColors" class="color-list">
+                <li class="color">color 1</li>
+                <li class="color">color 4</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    $(function () {
+        $("#allColors, #userColors").sortable({
+            connectWith: "ul",
+            placeholder: "placeholder",
+            delay: 150
+        })
+            .disableSelection()
+            .dblclick(function (e) {
+                var item = e.target;
+                if (e.currentTarget.id === 'allColors') {
+                    //move from all to user
+                    $(item).fadeOut('fast', function () {
+                        $(item).appendTo($('#userColors')).fadeIn('slow');
+                    });
+                } else {
+                    //move from user to all
+                    $(item).fadeOut('fast', function () {
+                        $(item).appendTo($('#allColors')).fadeIn('slow');
+                    });
+                }
+            });
+    });
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+.color-container {
+  width: 330px;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+p {
+  clear: both;
+  padding-top: 1em;
+}
+.color-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+  background: #eee;
+  padding: 5px;
+  width: 143px;
+  min-height: 1.5em;
+  font-size: 0.85em;
+}
+.color-list li {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  width: 120px;
+}
+.color-list li.placeholder {
+  height: 1.2em;
+}
+.color {
+  border: 1px solid #bbb;
+  background-color: #fafafa;
+  cursor: move;
+}
+.color.ui-sortable-helper {
+  opacity: 0.5;
+}
+.placeholder {
+  border: 1px solid orange;
+  background-color: #fffffd;
+}
